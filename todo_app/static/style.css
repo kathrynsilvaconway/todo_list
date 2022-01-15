@@ -4,3 +4,18 @@ body {
 strike {
     display: block;
 }
+
+#wrapper {
+    display: inline-block;
+    padding: 10px;
+}
+
+#form {
+    display: inline-block;
+    margin-top: 15px;
+}
+
+#form a {
+    display: inline-block;
+    vertical-align: top;
+}

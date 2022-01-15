@@ -14,22 +14,24 @@
     <script src='main.js'></script>
 </head>
 <body>
-
-    <h3>The To Do List</h3>
-    <form method="POST" action="/">
-        {% csrf_token %}
-        {{form.job_name}}
-        <input type="submit" value="Create Job">
-    </form>
-    {% for job in jobs %}
-    {% if job.done == True %}
-       <h5><strike>{{job}}</strike></h5>
-    {% else %}
-        <h5>{{job}}</h5>
-    {% endif %}
-        <a href="{% url 'update_job' job.id %}" class='btn btn-secondary'>Update</a>
-        <a href="{% url 'delete_job' job.id %}" class='btn btn-danger'>Delete</a>
-    {% endfor %}
-    
+    <div id="wrapper">
+        <h3>The To Do List</h3>
+        <form method="POST" action="/">
+            {% csrf_token %}
+            {{form.job_name}}
+            <input type="submit" value="Create Job">
+        </form>
+        <div>
+        {% for job in jobs %}
+        {% if job.done == True %}
+        <h5 style="margin-top: 15px;"><strike>{{job}}</strike></h5>
+        {% else %}
+            <h5 style="margin-top: 15px;">{{job}}</h5>
+        {% endif %}
+            <a href="{% url 'update_job' job.id %}" class='btn btn-secondary'>Update</a>
+            <a href="{% url 'delete_job' job.id %}" class='btn btn-danger'>Delete</a>
+        {% endfor %}
+        </div>
+    </div>   
 </body>
 </html>

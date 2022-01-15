@@ -15,11 +15,14 @@
 </head>
 <body>
 
-    <h3>Update Here</h3>
-    <form method="POST" action="">
-        {% csrf_token %}
-        {{form}}
-        <input type="submit" name="Update">
-    </form>
+    <h3>Update Here:</h3>
+    <div id = 'form'>
+        <form method="POST" action="">
+            {% csrf_token %}
+            {{form}}
+            <input type="submit" class='btn btn-success' name="Update">
+        </form>
+    </div>
+    <a href="{% url 'list' %}" class='btn btn-secondary'>Back</a>
 </body>
 </html>
